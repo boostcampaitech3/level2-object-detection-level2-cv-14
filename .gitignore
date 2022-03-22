@@ -1,1 +1,7 @@
 dataset/
+work_dirs/
+mlruns/
+
+nohup.out/
+._code
+._dataset
