@@ -168,8 +168,8 @@ def main():
     logger.info(f'Config:\n{cfg.pretty_text}')
 
     # set random seeds
-    seed = init_random_seed(args.seed)
-    logger.info(f'Set random seed to {seed}, '
+    seed = args.seed if args.seed else 42
+    logger.info(f'Set seed to {seed}, '
                 f'deterministic: {args.deterministic}')
     set_random_seed(seed, deterministic=args.deterministic)
     cfg.seed = seed
