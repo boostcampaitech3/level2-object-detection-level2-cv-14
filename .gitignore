@@ -2,6 +2,6 @@ dataset/
 work_dirs/
 mlruns/
 
+wandb/
 nohup.out/
-._code/
-._dataset/
+._*
