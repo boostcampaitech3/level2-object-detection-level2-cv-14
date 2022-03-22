@@ -3,5 +3,5 @@ work_dirs/
 mlruns/
 
 nohup.out/
-._code
-._dataset
+._code/
+._dataset/
