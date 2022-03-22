@@ -52,7 +52,10 @@ def split_dataset(input_json, output_dir, val_ratio, random_seed):
         with open(output_val_json, 'w') as val_writer:
             json.dump(val_data, val_writer)
 
-split_dataset(input_json='/opt/ml/level2-object-detection-level2-cv-14/dataset/train.json',
-              output_dir='/opt/ml/level2-object-detection-level2-cv-14/dataset/',
+path = os.path.dirname(os.path.abspath(__file__)) 
+path = os.path.join(path, '..', 'dataset')
+
+split_dataset(input_json=os.path.join(path, 'train.json'),
+              output_dir=path,
               val_ratio=0.1,
               random_seed=42)
