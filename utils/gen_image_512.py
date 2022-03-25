@@ -5,7 +5,7 @@ from tqdm.auto import tqdm
 
 def gen_image(img_path, out_dir):
     img = Image.open(img_path)
-    img = img.resize((512, 512))
+    img = img.resize((512, 512), Image.BILINEAR)
 
     img.save(out_dir)
 
