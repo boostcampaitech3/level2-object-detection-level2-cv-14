@@ -1,0 +1,1 @@
+https://github.com/MAILAB-Yonsei/capsule_endoscopy_detection/blob/master/mmdetection/configs/detectors_cascade_rcnn_r50_ms/cascade_rcnn_r50_fpn.py
