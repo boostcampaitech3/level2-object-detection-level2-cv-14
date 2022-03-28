@@ -20,6 +20,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Inference')
     parser.add_argument('config', help='inference config file path')
     parser.add_argument('checkpoint', help='checkpoint file')
+    parser.add_argument('--score-thr', type=float, default=0.001, help='rcnn nms score threshold')
+    parser.add_argument('--iou-thr', type=float, default=0.5, help='rcnn nms iou threshold')
     parser.add_argument('--work-dir', help='the dir checkpoint exists')
     parser.add_argument('--seed', type=int, default=None, help='random seed')
 
@@ -49,7 +51,8 @@ def main():
 
     cfg.optimizer_config.grad_clip = dict(max_norm=35, norm_type=2)
     cfg.model.train_cfg = None
-
+    cfg.model.test_cfg.rcnn.score_thr = args.score_thr
+    cfg.model.test_cfg.rcnn.iou_threshold = args.iou_thr
 
     dataset = build_dataset(cfg.data.test)
     data_loader = build_dataloader(
