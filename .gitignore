@@ -1,5 +1,4 @@
-dataset/
-dataset2/
+dataset*/
 
 work_dirs/
 mlruns/
@@ -7,3 +6,5 @@ mlruns/
 wandb/
 nohup.out
 ._*
+
+*.pt
